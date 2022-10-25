@@ -11,9 +11,11 @@ def get_computer_choice():
 # Function to ask user to pick an option until they enter a valid choice
 def get_user_choice():
     while True:
-        choice = input("Pick your choice from rock / paper / scissors: ")
+        choice = input("Pick your choice: ")
         if choice.lower() in choices:
             return choice.lower()
+        else:
+            print("That's not a valid choice, type either one of [ rock | paper | scissors ]")
 
 # Function to choose a winner
 def get_winner(computer_choice, user_choice):
@@ -37,9 +39,13 @@ def get_winner(computer_choice, user_choice):
 
     return winner
 
-# Test functions
-user_choice = get_user_choice()
-computer_choice = get_computer_choice()
+# Function to play the rock-paper-scissors game
+def play():
+    user_choice = get_user_choice()
+    computer_choice = get_computer_choice()
 
-print("Computer choice: ", computer_choice, ", User choice: ", user_choice)
-print("Winner: ", get_winner(computer_choice, user_choice))
+    print("Computer choice: ", computer_choice, ", User choice: ", user_choice)
+    print("Winner: ", get_winner(computer_choice, user_choice))
+
+# Play the game!
+play()
