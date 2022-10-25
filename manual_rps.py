@@ -11,5 +11,6 @@ def get_user_choice():
         if choice.lower() in choices:
             return choice.lower()
 
-print("Computer choice: ", get_computer_choice())
+# Test functions
 print("User choice: ", get_user_choice())
+print("Computer choice: ", get_computer_choice())
