@@ -26,3 +26,59 @@ This is an implementation of an interactive Rock-Paper-Scissors game, in which t
   
   These files contain the structure and the parameters of a deep learning model.
 
+## Milestone 3: Install the dependencies  
+
+Tensorflow and Keras are used to build deep learning models (neural networks). As part of this milestone, we get all dependencies installed in an environment created for this project: opencv-python, tensorflow and ipykernel
+
+- Create an environment 'computer_vision_env' 
+  ```python
+  conda create -n computer_vision_env
+  conda activate computer_vision_env
+  conda install pip
+  ```
+
+- Get Tensorflow for Mac  
+  
+  Follow steps from the section that says "arm64: Apple Silicon" from [this](https://developer.apple.com/metal/tensorflow-plugin/) link to install tensorflow for Mac
+  ```python
+  conda install -c apple tensorflow-deps
+  ```
+
+- Install the remaining necessary dependencies
+  - opencv
+    ```python
+    conda install -c conda-forge opencv
+    ```
+  - ipykernel
+    ```python
+    pip install ipykernel
+    ```
+
+- Create a requirements.txt file to help easily install the exact same dependencies later
+  - Get list of dependencies into requirements.txt:
+    ```python
+    pip list > requirements.txt
+    ```
+  - To easily install these exact dependencies later, run
+    ```python
+    pip install requirements.txt
+    ```
+
+## Milestone 4: Create a Rock-Paper-Scissors game  
+Create a Python script that will simulate a Rock-Paper-Scissors game: the code will ask for a choice, then compare the user's choice with a randomly chosen option by the computer and show the winner between the two  
+
+### Store the valid choices in a list  
+  ```choices = ["rock", "paper", "scissors"]```
+
+### Functions to implement the game 
+- Function to randomly pick a choice 
+  ```get_computer_choice()``` - use the random module to randomly pick an option and return the choice
+
+- Function to ask user to pick an option until they enter a valid choice
+  ```get_user_choice()```
+
+- Function to choose a winner
+```get_winner(computer_choice, user_choice)``` - gets  the user and computer choices as parameters and decide who won
+
+- Function to play the rock-paper-scissors game
+```play()``` - makes use of the above function to play the game
