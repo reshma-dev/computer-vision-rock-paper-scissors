@@ -1,6 +1,10 @@
+import time
+
 import cv2
 from keras.models import load_model
 import numpy as np
+
+
 model = load_model('keras_model.h5')
 cap = cv2.VideoCapture(0)
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
@@ -14,7 +18,10 @@ while True:
     prediction = model.predict(data)
     cv2.imshow('frame', frame)
     # Press q to close the window
-    print(prediction)
+    print(prediction[0])
+    labels = {0:'rock', 1: 'paper', 2: 'scissors', 3: 'Nothing'}
+    print(labels[np.argmax(prediction)])
+    time.sleep(0.1)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
             
