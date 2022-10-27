@@ -63,11 +63,11 @@ def get_user_choice():
         else:
             print("That's not a valid choice, pick one of rock, paper or scissors]")
 
+user_msg = "User"
+computer_msg = "Computer"
+
 # Function to choose a winner
 def get_winner(computer_choice, user_choice):
-    
-    user_msg = "User"
-    computer_msg = "Computer"
     winner = None
 
     if computer_choice == user_choice:
@@ -87,13 +87,21 @@ def get_winner(computer_choice, user_choice):
 
 # Function to play the rock-paper-scissors game
 def play():
-         
-    computer_choice = get_computer_choice()
-    user_choice = get_user_choice()
+    computer_wins = 0
+    user_wins = 0
+    while not ( computer_wins == 3 or user_wins == 3 ):
+        computer_choice = get_computer_choice()
+        user_choice = get_user_choice()
 
-    print("Computer choice: ", computer_choice, ", User choice: ", user_choice)
-    print("Winner: ", get_winner(computer_choice, user_choice))
+        print("Computer choice: ", computer_choice, ", User choice: ", user_choice)
+        winner = get_winner(computer_choice, user_choice)
+        if winner == user_msg:
+            user_wins += 1
+        else:
+            computer_wins += 1
 
+        print("Winner in this round: ", winner)
+    print(f"Best of 3 result: Computer won {computer_wins} times, User won {user_wins} times")
 # Play the game!
 play()
 
