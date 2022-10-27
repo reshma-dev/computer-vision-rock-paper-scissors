@@ -18,7 +18,7 @@ This is an implementation of an interactive Rock-Paper-Scissors game, in which t
   - Scissors
   - Nothing  
 
-- It is possible to test the model on teachablemachine to ensure you are happy with the results. More images the model gets trained with, more accurate will be the results.
+- It is possible to test the model on teachablemachine to ensure you are happy with the results. More images the model gets trained with, more accurate will be the results. ![](keras-model-test.png)
 
 - Download the model
   
