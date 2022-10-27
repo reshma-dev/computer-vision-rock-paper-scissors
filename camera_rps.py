@@ -4,6 +4,14 @@ from time import time
 from keras.models import load_model
 import numpy as np
 
+# TODO: Optional take it further later
+# Think of one way to improve the application? For example, you can print the countdown in the webcam display, 
+# or include a message like "press c to continue"? 
+# Use your imagination and intuition to improve the user experience!
+
+# Also, you can make your code much more readable by creating a class instead of creating multiple functions. 
+# This is not necessary, but definitely a step that will showcase your good Python skills.
+
 # Return the output of the Keras model
 def get_prediction():
     
